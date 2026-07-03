@@ -7,11 +7,11 @@
    ========================================================== */
 const PROJECTS = [
   {
-    title: "Назва гри",
-    category: "Ігри",
+    title: "Sprunki: Knockout",
+    category: "Games",
     description: "Короткий опис гри — жанр, механіка, що вирізняє проєкт.",
     tags: ["Unity", "C#"],
-    demo: "#",
+    Play: "https://play.google.com/store/apps/details?id=com.GameStageStudio.SprunkiKnockout",
     repo: "#",
   },
   {
