@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакти — Портфоліо проєктів</title>
+<meta name="description" content="Форма для звʼязку щодо співпраці.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ NAV ============ -->
+<header class="topbar">
+  <div class="topbar__dots" aria-hidden="true">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="tabs" aria-label="Основна навігація">
+    <a class="tab" href="index.html">home.js</a>
+    <a class="tab tab--active" href="contact.html">contact.js</a>
+  </nav>
+  <button class="menu-toggle" aria-label="Меню" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+<section class="section section--contact">
+  <p class="section__eyebrow">contact.js</p>
+  <h2 class="section__title">Зв'язатися для співпраці</h2>
+  <p class="hero__lead">Заповніть форму — повідомлення прийде мені на пошту.</p>
+
+  <!--
+    ЯК ПІДКЛЮЧИТИ ВІДПРАВКУ НА ПОШТУ (безкоштовно, без бекенду):
+    1. Зареєструйтесь на https://formspree.io (можна через GitHub)
+    2. Створіть форму (New Form), вкажіть свою пошту для отримання листів
+    3. Скопіюйте посилання виду https://formspree.io/f/xxxxxxxx
+    4. Вставте його замість "YOUR_FORM_ID" в атрибуті action нижче
+    5. Formspree надішле лист-підтвердження на вашу пошту — підтвердіть її
+  -->
+  <form
+    id="contact-form"
+    class="contact-form"
+    action="https://formspree.io/f/YOUR_FORM_ID"
+    method="POST"
+  >
+    <div class="field">
+      <label for="name">Ім'я</label>
+      <input type="text" id="name" name="name" required autocomplete="name">
+    </div>
+
+    <div class="field">
+      <label for="email">Ваша пошта</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+    </div>
+
+    <div class="field">
+      <label for="subject">Тема</label>
+      <input type="text" id="subject" name="subject" placeholder="Наприклад: пропозиція співпраці">
+    </div>
+
+    <div class="field">
+      <label for="message">Повідомлення</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn--primary" id="submit-btn">Надіслати</button>
+
+    <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="year"></span> · Портфоліо проєктів</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
