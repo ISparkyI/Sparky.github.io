@@ -40,7 +40,7 @@ const PROJECTS = [
     category: "games",
     description: {
       en: "Sprunki: Knockout is a fast-paced, chaotic arena brawler where your main goal is to push opponents out of the zone and be the last one standing.",
-      uk: "Sprunki: Knockout — швидкий хаотичний арена-бrawler, де головна мета — зіштовхнути суперників із зони та залишитись останнім.",
+      ua: "Sprunki: Knockout — швидкий хаотичний арена-бrawler, де головна мета — зіштовхнути суперників із зони та залишитись останнім.",
     },
     tags: ["Unity", "C#"],
     video: "https://www.youtube.com/watch?v=hQ3e4fCk-r8",
@@ -53,7 +53,7 @@ const PROJECTS = [
     category: "games",
     description: {
       en: "Sprunki Phase: Minigame is a vibrant collection of fun and addictive minigames set in the world of Sprunki, perfect for all players!",
-      uk: "Sprunki Phase: Minigame — це яскрава збірка захопливих мініігор у світі Sprunki, яка підійде для кожного гравця!",
+      ua: "Sprunki Phase: Minigame — це яскрава збірка захопливих мініігор у світі Sprunki, яка підійде для кожного гравця!",
     },
     tags: ["Unity", "C#"],
     video: "",
@@ -66,7 +66,7 @@ const PROJECTS = [
     category: "games",
     description: {
       en: "Memory Islands: Brain Trainer is a captivating card game and mobile brain trainer that turns classic memory and reaction improvement into an exciting adventure.",
-      uk: "Memory Islands: Brain Trainer — це захоплива карткова гра та мобільний тренажер для мозку, який перетворює класичне покращення пам'яті та реакції на цікаву пригоду.",
+      ua: "Memory Islands: Brain Trainer — це захоплива карткова гра та мобільний тренажер для мозку, який перетворює класичне покращення пам'яті та реакції на цікаву пригоду.",
     },
     tags: ["Unity", "C#"],
     video: "https://youtube.com/shorts/EkoJNZdBOko",
@@ -101,7 +101,7 @@ const PROJECTS = [
     All data is stored locally on your device and is not synced to the cloud. Deleting the app will permanently erase all saved data. To keep your estimates, export them as PDF files before uninstalling the application.</p>
     `,
 
-      uk: `
+      ua: `
     <ul class="feature-list">
       <li><strong>Розрахунок кошторисів</strong><br>
       Додавайте види робіт, обсяги та ціни за одиницю для миттєвого розрахунку вартості проєкту.</li>
@@ -155,7 +155,7 @@ const PROJECTS = [
         </p>
       `,
 
-      uk: `
+      ua: `
         <p>
           «Outside» — це атмосферний 3D-платформер, дія якого розгортається в моторошному
           промисловому середовищі. Гравці вживаються в роль маленького персонажа в протигазі,

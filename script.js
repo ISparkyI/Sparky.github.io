@@ -13,7 +13,7 @@ if (menuToggle && tabsNav) {
 }
 
 /* ==========================================================
-   LANGUAGE SWITCH (EN default, UK optional)
+   LANGUAGE SWITCH (EN default, UA optional)
    Only interface text switches — project titles/descriptions
    stay as written in projects-data.js.
    ========================================================== */
@@ -73,7 +73,7 @@ const TRANSLATIONS = {
     buy_notice_build: "You are purchasing the latest build of the app (APK for Android or IPA for iOS) — not the source code.",
     buy_notice_source: "If you're interested in purchasing the full project with source code, the price is negotiable — feel free to reach out.",
   },
-  uk: {
+  ua: {
     nav_home: "Головна",
     nav_contact: "Контакти",
     hero_tagline: "Ігри · Застосунки · Веб",
@@ -439,7 +439,7 @@ function isYouTubeShorts(url) {
     });
   }
 
-  // Get localized description: supports plain string or { en, uk } object
+  // Get localized description: supports plain string or { en, ua } object
   function getDesc(p) {
     if (!p.description) return '';
     if (typeof p.description === 'string') return p.description;
