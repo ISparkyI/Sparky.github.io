@@ -73,7 +73,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (form.action.includes('xkolkekk')) {
+    if (form.action.includes('YOUR_BUY_FORM_ID')) {
       status.textContent = t('form_not_connected');
       status.className = 'form-status is-error';
       return;

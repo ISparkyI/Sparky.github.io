@@ -56,6 +56,7 @@ const TRANSLATIONS = {
     submit_btn: "Send",
     sending: "Sending…",
     form_not_connected: "The form isn't connected yet — replace YOUR_FORM_ID in contact.html with your ID from formspree.io.",
+    buy_form_not_connected: "The purchase form isn't connected yet — replace YOUR_BUY_FORM_ID in buy.html with your ID from formspree.io.",
     sent_success: "Message sent. Thanks — I'll reply soon.",
     sent_error: "Couldn't send it. Please try again in a moment.",
     network_error: "Network error. Check your connection and try again.",
@@ -110,6 +111,7 @@ const TRANSLATIONS = {
     submit_btn: "Надіслати",
     sending: "Надсилання…",
     form_not_connected: "Форму ще не підключено — замініть YOUR_FORM_ID у contact.html на свій ID з formspree.io.",
+    buy_form_not_connected: "Форму покупки ще не підключено — замініть YOUR_BUY_FORM_ID у buy.html на свій ID з formspree.io.",
     sent_success: "Повідомлення надіслано. Дякую — відповім найближчим часом.",
     sent_error: "Не вдалося надіслати. Спробуйте ще раз трохи пізніше.",
     network_error: "Помилка мережі. Перевірте з'єднання й спробуйте ще раз.",
@@ -151,7 +153,8 @@ function applyStaticTranslations() {
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.topbar__cta .btn').forEach(btn => {
-    const href = (btn.getAttribute('href') || '').split('/').pop();
+    let href = (btn.getAttribute('href') || '').split('/').pop();
+    if (href === '' || href === '.') href = 'index.html'; // "./" points at the homepage
     if (href === currentPage) {
       btn.classList.remove('btn--ghost');
       btn.classList.add('btn--primary');
@@ -175,9 +178,27 @@ function applyStaticTranslations() {
 let refreshProjects = null;
 
 function setLang(lang) {
+  const scrollY = window.scrollY;
+
   localStorage.setItem('portfolioLang', lang);
   applyStaticTranslations();
+
+  const grid = document.getElementById('project-grid');
+  let observer;
+  if (grid) {
+    // While the grid rebuilds (cards + images reload asynchronously),
+    // the page briefly gets shorter, which forces the browser to clamp
+    // scroll back to the top. Keep re-pinning the saved position until
+    // things settle, then stop so normal scrolling isn't hijacked.
+    observer = new MutationObserver(() => window.scrollTo(0, scrollY));
+    observer.observe(grid, { childList: true, subtree: true });
+    setTimeout(() => observer && observer.disconnect(), 1000);
+  }
+
   if (typeof refreshProjects === 'function') refreshProjects();
+
+  window.scrollTo(0, scrollY);
+  requestAnimationFrame(() => window.scrollTo(0, scrollY));
 }
 
 applyStaticTranslations();
