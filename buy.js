@@ -73,7 +73,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (form.action.includes('YOUR_BUY_FORM_ID')) {
+    if (form.action.includes('https://formspree.io/f/xkolkekk')) {
       status.textContent = t('form_not_connected');
       status.className = 'form-status is-error';
       return;

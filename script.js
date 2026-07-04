@@ -153,8 +153,7 @@ function applyStaticTranslations() {
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.topbar__cta .btn').forEach(btn => {
-    let href = (btn.getAttribute('href') || '').split('/').pop();
-    if (href === '' || href === '.') href = 'index.html'; // "./" points at the homepage
+    const href = (btn.getAttribute('href') || '').split('/').pop();
     if (href === currentPage) {
       btn.classList.remove('btn--ghost');
       btn.classList.add('btn--primary');
