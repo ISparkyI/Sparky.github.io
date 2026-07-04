@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Контакти — Портфоліо проєктів</title>
-<meta name="description" content="Форма для звʼязку щодо співпраці.">
+<title>Contact — Project Portfolio</title>
+<meta name="description" content="Get in touch about collaboration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,16 +14,19 @@
 
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-<!-- ============ NAV ============ -->
 <header class="topbar">
   <div class="topbar__dots" aria-hidden="true">
     <span></span><span></span><span></span>
   </div>
-  <nav class="tabs" aria-label="Основна навігація">
-    <a class="tab" href="index.html">Головна</a>
-    <a class="tab tab--active" href="contact.html">Зв'язатися</a>
+  <nav class="tabs" aria-label="Main navigation">
+    <a class="tab" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="tab tab--active" href="contact.html" data-i18n="nav_contact">Contact</a>
   </nav>
-  <button class="menu-toggle" aria-label="Меню" aria-expanded="false">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="uk">UK</button>
+  </div>
+  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
@@ -31,16 +34,16 @@
 <main>
 
 <section class="section section--contact">
-  <h2 class="section__title">Зв'язатися для співпраці</h2>
-  <p class="hero__lead">Заповніть форму — повідомлення прийде мені на пошту.</p>
+  <h2 class="section__title" data-i18n="contact_title">Let's work together</h2>
+  <p class="hero__lead" data-i18n="contact_lead">Fill out the form and I'll get your message by email.</p>
 
   <!--
-    ЯК ПІДКЛЮЧИТИ ВІДПРАВКУ НА ПОШТУ (безкоштовно, без бекенду):
-    1. Зареєструйтесь на https://formspree.io (можна через GitHub)
-    2. Створіть форму (New Form), вкажіть свою пошту для отримання листів
-    3. Скопіюйте посилання виду https://formspree.io/f/xxxxxxxx
-    4. Вставте його замість "YOUR_FORM_ID" в атрибуті action нижче
-    5. Formspree надішле лист-підтвердження на вашу пошту — підтвердіть її
+    HOW TO CONNECT EMAIL DELIVERY (free, no backend needed):
+    1. Sign up at https://formspree.io (you can use your GitHub account)
+    2. Create a form (New Form) and set the email you want to receive messages at
+    3. Copy the endpoint, e.g. https://formspree.io/f/xxxxxxxx
+    4. Put it in the "action" attribute of the form below
+    5. Formspree will send a confirmation email to you — confirm it once
   -->
   <form
     id="contact-form"
@@ -49,26 +52,26 @@
     method="POST"
   >
     <div class="field">
-      <label for="name">Ім'я</label>
+      <label for="name" data-i18n="label_name">Name</label>
       <input type="text" id="name" name="name" required autocomplete="name">
     </div>
 
     <div class="field">
-      <label for="email">Ваша пошта</label>
+      <label for="email" data-i18n="label_email">Your email</label>
       <input type="email" id="email" name="email" required autocomplete="email">
     </div>
 
     <div class="field">
-      <label for="subject">Тема</label>
-      <input type="text" id="subject" name="subject" placeholder="Наприклад: пропозиція співпраці">
+      <label for="subject" data-i18n="label_subject">Subject</label>
+      <input type="text" id="subject" name="subject" data-i18n-placeholder="subject_placeholder" placeholder="e.g. collaboration proposal">
     </div>
 
     <div class="field">
-      <label for="message">Повідомлення</label>
+      <label for="message" data-i18n="label_message">Message</label>
       <textarea id="message" name="message" rows="6" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn--primary" id="submit-btn">Надіслати</button>
+    <button type="submit" class="btn btn--primary" id="submit-btn" data-i18n="submit_btn">Send</button>
 
     <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
   </form>
@@ -77,7 +80,7 @@
 </main>
 
 <footer class="footer">
-  <p>© <span id="year"></span> · All rights reserved.</p>
+  <p>© <span id="year"></span> · <span data-i18n="footer_text">All rights reserved.</span></p>
 </footer>
 
 <script src="script.js"></script>

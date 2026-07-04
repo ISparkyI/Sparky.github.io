@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Портфоліо проєктів</title>
-<meta name="description" content="Портфоліо проєктів — ігри, застосунки, вебсайти.">
+<title>Project Portfolio</title>
+<meta name="description" content="Portfolio of projects — games, apps, websites.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,50 +14,51 @@
 
 <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-<!-- ============ NAV ============ -->
 <header class="topbar">
   <div class="topbar__dots" aria-hidden="true">
     <span></span><span></span><span></span>
   </div>
-  <nav class="tabs" aria-label="Основна навігація">
-    <a class="tab tab--active" href="index.html">Головна</a>
-    <a class="tab" href="contact.html">Зв'язатися</a>
+  <nav class="tabs" aria-label="Main navigation">
+    <a class="tab tab--active" href="index.html" data-i18n="nav_home">Home</a>
+    <a class="tab" href="contact.html" data-i18n="nav_contact">Contact</a>
   </nav>
-  <button class="menu-toggle" aria-label="Меню" aria-expanded="false">
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="uk">UK</button>
+  </div>
+  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
 
 <main>
 
-<!-- ============ HERO ============ -->
 <section class="editor-pane hero">
-  <p class="hero__lead">Ігри, застосунки та вебпроєкти — зібрані в одному місці.</p>
+  <p class="hero__lead" data-i18n="hero_lead">Games, apps, and web projects — all in one place.</p>
   <div class="hero__cta">
-    <a class="btn btn--primary" href="#projects">Переглянути проєкти</a>
-    <a class="btn btn--ghost" href="contact.html">Зв'язатися</a>
+    <a class="btn btn--primary" href="#projects" data-i18n="cta_projects">View projects</a>
+    <a class="btn btn--ghost" href="contact.html" data-i18n="cta_contact">Get in touch</a>
   </div>
 </section>
 
-<!-- ============ PROJECTS ============ -->
 <section id="projects" class="section">
-  <h2 class="section__title">Проєкти</h2>
+  <h2 class="section__title" data-i18n="projects_title">Projects</h2>
 
-  <div class="filters" id="filters" role="group" aria-label="Фільтр за категорією">
-    <!-- кнопки генеруються автоматично зі script.js -->
+  <div class="filters" id="filters" role="group" aria-label="Filter by category">
+    <!-- buttons generated automatically by script.js -->
   </div>
 
   <div class="project-grid" id="project-grid">
-    <!-- картки проєктів генеруються автоматично зі script.js -->
+    <!-- cards generated automatically by script.js -->
   </div>
 
-  <p class="project-grid__empty" id="empty-state" hidden>У цій категорії поки немає проєктів.</p>
+  <p class="project-grid__empty" id="empty-state" data-i18n="empty_state" hidden>No projects in this category yet.</p>
 </section>
 
 </main>
 
 <footer class="footer">
-  <p>© <span id="year"></span> · All rights reserved.</p>
+  <p>© <span id="year"></span> · <span data-i18n="footer_text">All rights reserved.</span></p>
 </footer>
 
 <script src="projects-data.js"></script>
